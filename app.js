@@ -30,6 +30,8 @@
     requiredProperties : [
       'ticket.id',
       'ticket.subject'
+     // 'ticket.requester_id'
+
     ],
 
     init: function(data){
@@ -66,7 +68,7 @@
 
     handleRequiredProperties: function() {
       var keywords = this.extractKeywords(this.ticket().subject()).join(" ");
-
+      //var keywords = this.ticket().requester_id();
       this.$('#search-input').val(keywords);
 
       this.searchTickets(keywords);
